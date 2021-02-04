@@ -1,0 +1,137 @@
+---
+title: "STA238 - Winter 2021"
+author: "ADD YOUR NAME HERE - STUDENT NUMBER"
+date: February 12, 2021
+subtitle: Assignment 2
+output:
+  pdf_document: default
+---
+
+```{r, include=FALSE}
+knitr::opts_chunk$set(warning = FALSE, message = FALSE)
+library(openintro)
+```
+
+
+# Part 1
+
+
+## Step 1 (Mathematical Justification)
+
+<Type in your assumptions here.>
+
+<Clarify what your estimators are here and clarify what the parameter of interest is ($\sigma^2$) here.>
+
+<Type your derivations of the Expected Values here. I have provided some useful LaTeX coding examples below.> 
+
+The first is an example of inline math code. To write math text in line with the text we surround the math text (LaTeX code) by one pair of dollar signs (\$).The sample variance formula is $S^2 = \frac{1}{n-1} \sum_{i=1}^n(X_i - \bar{X})^2$. 
+
+The two estimators written on individual lines are done so by putting my math text (LaTeX code) in two sets of dollar signs (\$). See here: $$T_1 = S^2 = \frac{1}{n-1} \sum_{i=1}^n(X_i - \bar{X})^2 $$ $$T_2 = S^{2}_* = \frac{1}{n} \sum_{i=1}^n(X_i - \bar{X})^2 $$ 
+
+Another useful line is $X_1,...,X_n \stackrel{iid}{\sim} Normal(\mu = 0, \sigma^2)$.
+
+Try knitting this to see what it looks like!
+
+## Step 2 (Simulation Justification)
+
+
+<Here you can briefly explain your simulation>
+
+```{r, include = TRUE}
+
+## Here you can code your simulation and create the 3 plots.
+
+## Here is some starter code for the simulation:
+
+set.seed(123) # Set this seed to be the last 3 digits of your student number.
+n = 50 #pre-specify your sample size
+sigma_sq = 1
+
+## Simulating from Normal
+rnorm(n, mean=0, sd=sqrt(sigma_sq))
+
+
+## Create your plots below. (I recommend using ggplot) 
+
+
+## Remember the patchwork package might be helpful.
+
+
+```
+
+<Here you should describe the results of the simulation and the plots.>
+
+<Here you should state your conclusions regarding the trade-offs of the two estimators $T_1$ and $T_2$.>
+
+*Note: There is also some example code for Part 1 Step 2 in the Assignment2-Part1-Step2-Example.Rmd file in Jupyterhub. Feel free to copy and paste that code in here as you'd like.* 
+
+
+\newpage
+
+# Part 2
+
+## Model
+
+<Include some text introducing the model/methodology.>
+
+$$ include.your.mathematical.model.here $$
+<Here you should describe the model. What does each greek letter represent. Clarify any assumptions of this model.>
+
+## Results 
+
+```{r, include = FALSE}
+
+# Here you can load in and clean the data (you may need to do the cleaning in a separate R script). 
+
+# You may need additional chunks.
+
+# I would recommend not including any of the Cleaning process output here. 
+
+```
+
+<Here you can give a brief explanation of the variables that you will be using in your linear regression model. Clarify the types of these two variables.>
+
+```{r, include = FALSE}
+
+# Here you can run a linear regression on your two variables of interest.
+
+#lm(y~x, data = your_data)
+
+
+```
+
+<Below you should include a well formatted table of your results.>
+
+| $\hat{\alpha}$ |   1.000 |
+|--------------- | --------|
+| $\hat{\beta}$  |   2.000 |
+
+
+<Note: Alternatively you can use the `knitr::kable` function to create a well formatted table from your code. See here: [https://rmarkdown.rstudio.com/lesson-7.html](https://rmarkdown.rstudio.com/lesson-7.html).>
+
+
+<Include an explanation/interpretation of the results of the table. You should explain the slope and the y-intercept from a practical perspective. It might be helpful to make a prediction for an arbitrary x value.> 
+
+<Remember you can use `r ` to use inline R code.>
+
+```{r, echo=FALSE}
+
+# Use this to calculate generate a scatterplot of your variables.
+# Don't forget to use abline to overlay the scatterplot with the regression line.
+
+```
+
+
+<Include an explanation/interpretation of the scatterplot of the table. Make sure to comment on the appropriateness of the assumptions.>
+
+
+All analysis for this report was programmed using `R version 4.0.2`. 
+
+
+## Bibliography
+
+1. Grolemund, G. (2014, July 16) *Introduction to R Markdown*. RStudio. [https://rmarkdown.rstudio.com/articles_intro.html](https://rmarkdown.rstudio.com/articles_intro.html). (Last Accessed: January 15, 2021) 
+
+2. Dekking, F. M., et al. (2005) *A Modern Introduction to Probability and Statistics: Understanding why and how.* Springer Science & Business Media.
+
+3.  Allaire, J.J., et. el. *References: Introduction to R Markdown*. RStudio. [https://rmarkdown.rstudio.com/docs/](https://rmarkdown.rstudio.com/docs/). (Last Accessed: January 15, 2021) 
